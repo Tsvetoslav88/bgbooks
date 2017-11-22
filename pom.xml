@@ -23,6 +23,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
+		<!-- The main class to start by executing java -jar -->
+    	<start-class>org.vexelon.net.bgbooks.BgbooksApplication</start-class>
 	</properties>
 
 	<dependencies>
