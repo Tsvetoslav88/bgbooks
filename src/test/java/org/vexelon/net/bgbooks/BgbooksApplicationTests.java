@@ -24,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @RunWith(SpringJUnit4ClassRunner.class)
 @EnableAutoConfiguration 
-//@ActiveProfiles("test")
+@ActiveProfiles("test")
 public class BgbooksApplicationTests {
 
 	@Test
