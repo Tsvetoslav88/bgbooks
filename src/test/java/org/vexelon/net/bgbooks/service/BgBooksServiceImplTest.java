@@ -11,14 +11,19 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.vexelon.net.bgbooks.BgbooksApplication;
 import org.vexelon.net.bgbooks.model.Book;
 import org.vexelon.net.bgbooks.model.BookId;
 import org.vexelon.net.bgbooks.repository.BgBooksRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@EnableAutoConfiguration 
+//@EnableAutoConfiguration
+@WebAppConfiguration
 //@WebMvcTest(BgBooksRepository.class)
+@ContextConfiguration(classes = {BgbooksApplication.class})
 @ActiveProfiles("test")
 public class BgBooksServiceImplTest {
 
