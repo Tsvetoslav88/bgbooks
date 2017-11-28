@@ -25,7 +25,7 @@ import org.vexelon.net.bgbooks.repository.BgBooksRepository;
 //@WebMvcTest(BgBooksRepository.class)
 @ContextConfiguration(classes = {BgbooksApplication.class})
 @ActiveProfiles("test")
-public class BgBooksServiceImplTest {
+public class BgBooksServiceTest {
 
 	@Autowired
 	private BgBooksRepository bgBooksRepository;
