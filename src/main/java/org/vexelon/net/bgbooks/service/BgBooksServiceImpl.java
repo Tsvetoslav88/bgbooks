@@ -2,6 +2,8 @@ package org.vexelon.net.bgbooks.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.vexelon.net.bgbooks.model.Book;
@@ -10,6 +12,8 @@ import org.vexelon.net.bgbooks.repository.BgBooksRepository;
 
 @Service("bgBooksSerivce")
 public class BgBooksServiceImpl implements BgBooksService{
+	
+	private static final Logger logger = LoggerFactory.getLogger(BgBooksServiceImpl.class);
 	
 	@Autowired
 	private BgBooksRepository bgBooksRepository;
@@ -28,6 +32,8 @@ public class BgBooksServiceImpl implements BgBooksService{
 
 	@Override
 	public List<Book> findAllBooks() {
+		logger.error("***************************in find all books method");
+		System.out.println("***************************in find all books method");
 		return bgBooksRepository.findAll();
 	}
 	
