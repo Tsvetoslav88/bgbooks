@@ -32,9 +32,13 @@ public class BgBooksServiceImpl implements BgBooksService{
 
 	@Override
 	public List<Book> findAllBooks() {
-		logger.error("***************************in find all books method");
-		System.out.println("***************************in find all books method");
+//		logger.error("***************************in find all books method");
 		return bgBooksRepository.findAll();
+	}
+
+	@Override
+	public Book findById(BookId bookId) {
+		return bgBooksRepository.findOne(bookId);
 	}
 	
 }
