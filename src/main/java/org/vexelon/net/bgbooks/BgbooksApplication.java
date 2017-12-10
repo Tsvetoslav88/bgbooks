@@ -8,9 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
-@EntityScan("org.vexelon.net.bgbooks.model")
+//@Import(JpaConfiguration.class)
+@SpringBootApplication(scanBasePackages={"org.vexelon.net.bgbooks"})
+//@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
+//@EntityScan("org.vexelon.net.bgbooks.model")
 public class BgbooksApplication {
 
 	public static void main(String[] args) {

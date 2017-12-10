@@ -2,6 +2,7 @@ package org.vexelon.net.bgbooks.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class Book implements Serializable{
 	    @NotNull
 	    private BookId bookId;
 
+	@Column(name = "type")
 	private String type; 
 	
 	public BookId getBookId() {
