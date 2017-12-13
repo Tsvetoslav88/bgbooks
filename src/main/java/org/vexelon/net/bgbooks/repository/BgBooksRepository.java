@@ -9,4 +9,8 @@ import org.vexelon.net.bgbooks.model.BookId;
 
 @Repository
 public interface BgBooksRepository extends JpaRepository<Book, BookId>{
+	
+//	public List<Book> findAll();
+//	public Book findByName(String name);
+	
 }

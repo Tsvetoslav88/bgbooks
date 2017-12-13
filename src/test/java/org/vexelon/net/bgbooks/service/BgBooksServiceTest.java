@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,11 +20,14 @@ import org.vexelon.net.bgbooks.model.Book;
 import org.vexelon.net.bgbooks.model.BookId;
 import org.vexelon.net.bgbooks.repository.BgBooksRepository;
 
+//@RunWith(SpringJUnit4ClassRunner.class)
+////@EnableAutoConfiguration
+//@WebAppConfiguration
+////@WebMvcTest(BgBooksRepository.class)
+//@ContextConfiguration(classes = {BgbooksApplication.class})
+//@SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-//@EnableAutoConfiguration
-@WebAppConfiguration
-//@WebMvcTest(BgBooksRepository.class)
-@ContextConfiguration(classes = {BgbooksApplication.class})
+@EnableAutoConfiguration 
 @ActiveProfiles("test")
 public class BgBooksServiceTest {
 
