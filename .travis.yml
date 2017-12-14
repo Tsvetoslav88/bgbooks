@@ -1,4 +1,5 @@
 language: java
 jdk:
 - oraclejdk8
-mvn clean verify
+after_success:
+- mvn deploy --settings ~/settings.xml
