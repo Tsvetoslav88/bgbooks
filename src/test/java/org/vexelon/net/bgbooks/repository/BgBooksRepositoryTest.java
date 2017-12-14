@@ -23,7 +23,7 @@ import org.vexelon.net.bgbooks.model.BookId;
 //@RunWith(SpringRunner.class)
 @DataJpaTest
 //@EnableAutoConfiguration 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @EnableAutoConfiguration 
 //@ActiveProfiles("test")
 public class BgBooksRepositoryTest {
