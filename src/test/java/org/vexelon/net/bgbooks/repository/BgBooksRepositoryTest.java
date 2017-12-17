@@ -24,13 +24,14 @@ import org.vexelon.net.bgbooks.model.Book;
 import org.vexelon.net.bgbooks.model.BookId;
 
 //@RunWith(SpringRunner.class)
-@DataJpaTest
+
 //@EnableAutoConfiguration 
 @RunWith(SpringRunner.class)
 //@EnableAutoConfiguration 
 //@ActiveProfiles("test")
 //@SpringBootTest
 //@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
+@DataJpaTest
 @ComponentScan("org.vexelon.net.bgbooks.repository")
 public class BgBooksRepositoryTest {
 
