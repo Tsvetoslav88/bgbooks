@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,6 +29,7 @@ import org.vexelon.net.bgbooks.model.BookId;
 //@EnableAutoConfiguration 
 //@ActiveProfiles("test")
 //@SpringBootTest
+@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
 public class BgBooksRepositoryTest {
 
 	@Autowired

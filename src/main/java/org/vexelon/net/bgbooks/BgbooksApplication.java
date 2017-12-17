@@ -10,11 +10,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 //@Import(JpaConfiguration.class)
 @SpringBootApplication(scanBasePackages={"org.vexelon.net.bgbooks"})
-//@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
+@EnableJpaRepositories("org.vexelon.net.bgbooks.repository")
 //@EntityScan("org.vexelon.net.bgbooks.model")
 public class BgbooksApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BgbooksApplication.class, args);
 	}
+
 }
