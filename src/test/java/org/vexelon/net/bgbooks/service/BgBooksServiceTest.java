@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -28,6 +29,7 @@ import org.vexelon.net.bgbooks.BgbooksApplication;
 import org.vexelon.net.bgbooks.model.Book;
 import org.vexelon.net.bgbooks.model.BookId;
 import org.vexelon.net.bgbooks.repository.BgBooksRepository;
+import org.junit.Assert;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
 ////@EnableAutoConfiguration
@@ -45,7 +47,7 @@ public class BgBooksServiceTest {
 //	@Autowired
 //	private BgBooksRepository bgBooksRepository;
 	@TestConfiguration
-    static class EmployeeServiceImplTestContextConfiguration {
+    static class BgBooksServiceImplTestContextConfiguration {
   
         @Bean
         public BgBooksService bgBooksService() {
@@ -63,25 +65,28 @@ public class BgBooksServiceTest {
 	public void setUp() {
 	    Book book = new Book();
 		book.setBookId(new BookId("tsetso", "tsetso"));
+		Book book2 = new Book();
+		book2.setBookId(new BookId("ivan", "ivanov"));
 	 
-		
+//		bgBooksService.saveBook(book);
+
 		List<Book> books = new ArrayList<>();
 		books.add(book);
+		books.add(book2);
 	    Mockito.when(bgBooksRepository.findAll())
 	      .thenReturn(books);
 	}
 	
 	@Test
 	public void whenValidBook_thenBookShouldBeFound() {
-	    String name = "alex";
-	    Book book = new Book();
-		book.setBookId(new BookId("tsetso", "tsetso"));
-//	    Book found = bgBooksService.findById(book.getBookId());
+//	    Book book = new Book();
+//		book.setBookId(new BookId("tsetso", "tsetso"));
 		List<Book> found = bgBooksService.findAllBooks();
+		System.out.println(found.get(0).getBookId().getBookName());
 	  System.out.println("---------------------------------"+found.size());
-		assertTrue(true);
-//	     assertThat(found.getName())
-//	      .isEqualTo(name);
+	  assertTrue(found.get(0).getBookId().getBookName().equals("tsetso"));
+//		assertTrue(true);
+//	  assertThat(found.get(0).getBookId(), book);
 	 }
 	
 	@Test

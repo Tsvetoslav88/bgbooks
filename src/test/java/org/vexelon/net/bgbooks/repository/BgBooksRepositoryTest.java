@@ -48,7 +48,8 @@ public class BgBooksRepositoryTest {
 		book.setBookId(new BookId("tsetso", "tsetso"));
 		entityManager.persist(book);
 	    entityManager.flush();
-	 
+	    
+	    
 	    // when
 //	    Book found = bgBooksRepository.findByName(alex.getName());
 	    List<Book> found = bgBooksRepository.findAll();

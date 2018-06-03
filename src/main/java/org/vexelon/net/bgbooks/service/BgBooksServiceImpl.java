@@ -10,6 +10,7 @@ import org.vexelon.net.bgbooks.model.Book;
 import org.vexelon.net.bgbooks.model.BookId;
 import org.vexelon.net.bgbooks.repository.BgBooksRepository;
 
+
 @Service("bgBooksSerivce")
 public class BgBooksServiceImpl implements BgBooksService{
 	
@@ -39,6 +40,17 @@ public class BgBooksServiceImpl implements BgBooksService{
 	@Override
 	public Book findById(BookId bookId) {
 		return bgBooksRepository.findOne(bookId);
+	}
+
+	@Override
+	public void saveBook(Book book) {
+		bgBooksRepository.saveAndFlush(book);
+		
+	}
+
+	@Override
+	public boolean isBookExist(Book book) {
+		return findById(book.getBookId()) != null;
 	}
 	
 }

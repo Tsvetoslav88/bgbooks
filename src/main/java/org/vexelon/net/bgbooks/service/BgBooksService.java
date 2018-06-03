@@ -10,6 +10,8 @@ public interface BgBooksService {
 	
 	Book findById(BookId bookId);
 	
+	void saveBook(Book book);
+	
 //	User findById(long id);
 //	
 //	User findByName(String name);
@@ -24,5 +26,5 @@ public interface BgBooksService {
 //	
 //	void deleteAllUsers();
 //	
-//	boolean isUserExist(User user);
+	boolean isBookExist(Book book);
 }

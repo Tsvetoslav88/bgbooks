@@ -2,6 +2,7 @@ package org.vexelon.net.bgbooks.controller;
 
 import java.util.List;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,7 +76,25 @@ public class BgBooksController {
 			return new ResponseEntity<Book>(book, HttpStatus.OK);
 		}
 
-//		// -------------------Create a User-------------------------------------------
+		// -------------------Create a User-------------------------------------------
+		
+		@SuppressWarnings("unchecked")
+		@RequestMapping(value = "/bgbooks/", method = RequestMethod.POST)
+		public ResponseEntity<?> createUser(@RequestBody Book book, UriComponentsBuilder ucBuilder) {
+			logger.info("Creating book: {}", book);
+
+			if (bgBooksService.isBookExist(book)) {
+				//TODO - fix the message - Unable to create. A User with name org.vexelon.net.bgbooks.model.BookId@bb69d101 already exist.
+				logger.error("Unable to create. A User with name {} already exist", book.getBookId());
+				return new ResponseEntity(new CustomErrorType("Unable to create. A User with name " + 
+				book.getBookId() + " already exist."),HttpStatus.CONFLICT);
+			}
+			bgBooksService.saveBook(book);
+
+			HttpHeaders headers = new HttpHeaders();
+			headers.setLocation(ucBuilder.path("/api/book/{id}").buildAndExpand(book.getBookId()).toUri());
+			return new ResponseEntity<String>(headers, HttpStatus.CREATED);
+		}
 //
 //		@RequestMapping(value = "/user/", method = RequestMethod.POST)
 //		public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
