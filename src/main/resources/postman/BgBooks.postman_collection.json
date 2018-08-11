@@ -1,0 +1,64 @@
+{
+	"variables": [],
+	"info": {
+		"name": "BgBooks",
+		"_postman_id": "375a9558-7d0a-1669-b5b8-3bd4eef4123b",
+		"description": "Spring boot demo project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List books",
+			"request": {
+				"url": "http://localhost:8080/api/v1/bgbooks/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get one book",
+			"request": {
+				"url": "http://localhost:8080/api/v1/bgbooks/Dome/Flyway",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Check Rest application",
+			"request": {
+				"url": "http://localhost:8080/api/v1/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create book",
+			"request": {
+				"url": "http://localhost:8080/api/v1/bgbooks/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": {\n        \"bookName\": \"Tsetso\",\n        \"bookAuthor\": \"Tsetso\"\n    },\n    \"type\": \"Funny\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
